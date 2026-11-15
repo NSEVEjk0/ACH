@@ -46,6 +46,8 @@ node --test --experimental-test-isolation=none tests/v4/intents-ui.test.mjs
 
 These offline tests exercise signer checks, restart reconciliation, complete-group private verification, quote validation and token precision. Local contract Wasm and deterministic worker fixtures are not evidence of a live chain transaction, measured gas use or wallet setup speed. Verify live behavior through a fresh testnet workspace and its final receipts before making those claims.
 
+[Clearing verification](verification.md) collects the already completed public and private testnet journeys, the dated automated test results and read-only instructions for checking finalized rounds and token backing without creating a workspace.
+
 ## Frontend
 
 ```sh

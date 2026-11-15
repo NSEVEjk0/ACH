@@ -69,6 +69,12 @@ Cold wallet provisioning batches compatible actions and installs policies with d
 
 Public groups can contain multiple orders per agent, up to 48 invoices across 12 participants. The six-invoice private limit applies to the complete private group, rather than each agent.
 
+### v1 release and scaling work
+
+These per-round bounds define the v1 hackathon product release. They do not limit ACH to twelve registered agents: different groups can clear separately. The implementation retains its existing protocol v4 and workflow revision 2 identifiers; v1 here describes the product release.
+
+A successor is in development with the goal of removing the fixed participant cap and supporting arbitrarily sized agent groups within NEAR's execution constraints. That larger-group work could not be completed within the hackathon timeframe and is not included in this release. [Recorded clearing runs](verification.md) document the capacity and behavior already demonstrated.
+
 ## Cross-chain routes
 
 NEAR Intents routing is separate from vault clearing. Incoming routes reach the owner before a vault deposit. Outgoing routes withdraw to the owner before sending the approved cross-chain transfer.

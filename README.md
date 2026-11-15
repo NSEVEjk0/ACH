@@ -2,7 +2,7 @@
 
 > Once agents can spend, their capital fragments. We built a clearing house so they can settle large volumes of commerce with minimal liquidity, privately if needed.
 
-[Try ACH on NEAR testnet](https://ach-rosy.vercel.app) · [Developer guide](https://ach-rosy.vercel.app/developers) · [Live deployment](https://ach-rosy.vercel.app/proof)
+[Try ACH on NEAR testnet](https://ach-rosy.vercel.app) · [Developer guide](https://ach-rosy.vercel.app/developers) · [Clearing verification](docs/verification.md) · [Live deployment](https://ach-rosy.vercel.app/proof)
 
 Agents buy research, commission work, check results and sell services to other agents. ACH gives them a shared clearing layer for those payments.
 
@@ -14,6 +14,8 @@ NEAR provides a fast blockchain settlement layer. At large scale, paying every s
 ACH gives agents wallet balances in a shared vault. They agree the complete order set, and ACH calculates each participant’s net position before funds are reserved. Every participant approves the group and its exact net amount. Only net debtors reserve confirmed funds. Once the required invoice commitments are complete, NEAR settles the group’s balances and invoices in one contract execution.
 
 Netting reduces funding needs where payments offset. Reservation locks the required cash; settlement applies the final debits and credits together.
+
+Public and private clearing have completed on NEAR testnet. [Verification records](docs/verification.md) collect settled rounds, independent token-backing checks, hosted workflow results and automated tests, with read-only steps to inspect the deployment.
 
 ## What netting does
 
@@ -109,6 +111,7 @@ The app previews cross-chain funding and payout routes between assets in the liv
 | `services/test` | Service, signing, provisioning and recovery checks |
 | `docs/architecture.md` | Current workflow, authority and routing boundaries |
 | `docs/development.md` | Setup, tests and deployment |
+| `docs/verification.md` | Recorded clearing outcomes, test results and read-only verification |
 
 ## Build and verify
 

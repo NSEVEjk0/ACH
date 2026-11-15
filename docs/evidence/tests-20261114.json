@@ -1,0 +1,240 @@
+{
+  "schema_version": 1,
+  "compiled_at_utc": "2026-11-15T16:48:20.572880+00:00",
+  "audit_finished_at_utc": "2026-11-14T11:03:01.493590+00:00",
+  "repository": "https://github.com/NSEVEjk0/ACH",
+  "source_commit": "823a0f05a0f443f26076682a9dc54368d4827b07",
+  "automated_tests": {
+    "passed": 299,
+    "failed": 0,
+    "suites": [
+      {
+        "name": "rust-workspace",
+        "passed_tests": 46,
+        "command": [
+          "cargo",
+          "test",
+          "--locked",
+          "--offline",
+          "--workspace"
+        ],
+        "exit_code": 0,
+        "duration_seconds": 19.47
+      },
+      {
+        "name": "core",
+        "passed_tests": 10,
+        "command": [
+          "npm",
+          "test",
+          "--prefix",
+          "packages/core",
+          "--",
+          "--maxWorkers=1"
+        ],
+        "exit_code": 0,
+        "duration_seconds": 1.32
+      },
+      {
+        "name": "client-sdk",
+        "passed_tests": 34,
+        "command": [
+          "npm",
+          "test",
+          "--prefix",
+          "packages/client"
+        ],
+        "exit_code": 0,
+        "duration_seconds": 3.64
+      },
+      {
+        "name": "intents-sdk",
+        "passed_tests": 16,
+        "command": [
+          "npm",
+          "test",
+          "--prefix",
+          "packages/intents"
+        ],
+        "exit_code": 0,
+        "duration_seconds": 2.48
+      },
+      {
+        "name": "legacy-agent",
+        "passed_tests": 14,
+        "command": [
+          "npm",
+          "test",
+          "--prefix",
+          "agent"
+        ],
+        "exit_code": 0,
+        "duration_seconds": 0.52
+      },
+      {
+        "name": "services",
+        "passed_tests": 83,
+        "command": [
+          "npm",
+          "run",
+          "test:services"
+        ],
+        "exit_code": 0,
+        "duration_seconds": 21.8
+      },
+      {
+        "name": "security-and-ui",
+        "passed_tests": 34,
+        "command": [
+          "npm",
+          "run",
+          "test:security"
+        ],
+        "exit_code": 0,
+        "duration_seconds": 2.43
+      },
+      {
+        "name": "actual-contract-wasm",
+        "passed_tests": 4,
+        "command": [
+          "npm",
+          "run",
+          "test:wasm"
+        ],
+        "exit_code": 0,
+        "duration_seconds": 1.88
+      },
+      {
+        "name": "legacy-contract-security",
+        "passed_tests": 31,
+        "execution": "Completed security.test.ts in the combined legacy run before its outer runner timeout.",
+        "suite_duration_seconds": 749.238
+      },
+      {
+        "name": "legacy-clearing-contract",
+        "passed_tests": 24,
+        "execution": "Passed in the final two-file rerun."
+      },
+      {
+        "name": "legacy-dependency-protections",
+        "passed_tests": 3,
+        "execution": "Passed in the final two-file rerun."
+      }
+    ]
+  },
+  "builds_and_interoperability": [
+    {
+      "name": "build-v4",
+      "command": [
+        "node",
+        "scripts/v4/build.mjs",
+        "--offline"
+      ],
+      "exit_code": 0,
+      "passed": true,
+      "duration_seconds": 54.49
+    },
+    {
+      "name": "build-native-worker",
+      "command": [
+        "cargo",
+        "build",
+        "--locked",
+        "--offline",
+        "-p",
+        "ach-private-netting"
+      ],
+      "exit_code": 0,
+      "passed": true,
+      "duration_seconds": 3.35
+    },
+    {
+      "name": "private-worker-cross-language",
+      "command": [
+        "node",
+        "scripts/v4/private-test.mjs"
+      ],
+      "exit_code": 0,
+      "passed": true,
+      "duration_seconds": 0.72
+    },
+    {
+      "name": "web-build",
+      "command": [
+        "npm",
+        "run",
+        "build",
+        "--prefix",
+        "web"
+      ],
+      "exit_code": 0,
+      "passed": true,
+      "duration_seconds": 36.54
+    }
+  ],
+  "browser_runs": [
+    {
+      "name": "local",
+      "scope": "Local vault/token Wasm, native private worker and deterministic service fixtures.",
+      "started_at_utc": "2026-11-14T10:26:07.825Z",
+      "finished_at_utc": "2026-11-14T10:27:09.962Z",
+      "passed": true,
+      "checks": 71,
+      "browser_errors": 0,
+      "native_worker_executions": 6,
+      "original_report_sha256": "7c84bc3edd1e714d290de9f0b7c69a8cbfd64729fd4cd6484897d78aa7daa1d1"
+    },
+    {
+      "name": "hosted-interface",
+      "scope": "Hosted public pages and workspace interface checks with API fixtures.",
+      "started_at_utc": "2026-11-14T10:42:11.907Z",
+      "finished_at_utc": "2026-11-14T10:42:38.172Z",
+      "passed": true,
+      "checks": 37,
+      "browser_errors": 0,
+      "native_worker_executions": 0,
+      "original_report_sha256": "2a33fe88c3e3901f6f4e35252a2dd6948d36e7a6447e86c8261468a31e483040"
+    }
+  ],
+  "live_read_only_checks": {
+    "passed": 17,
+    "scope": "Hosted endpoint availability and authentication behavior; backend service health; deployed testnet contract/token accounts and vault code-hash binding."
+  },
+  "execution_scope": {
+    "new_public_network_financial_transactions": false,
+    "live_ai_or_outlayer_calls": false,
+    "mainnet_intents_transfers": false,
+    "original_source_unchanged": true
+  },
+  "legacy_run_completion": {
+    "combined_command": [
+      "node",
+      "node_modules/vitest/vitest.mjs",
+      "run",
+      "--maxWorkers=1"
+    ],
+    "combined_run_duration_seconds": 900.09,
+    "combined_process_exit_code": null,
+    "combined_run_result": "outer_runner_timeout",
+    "completed_security_tests": 31,
+    "remaining_files_command": [
+      "node",
+      "node_modules/vitest/vitest.mjs",
+      "run",
+      "test/clearing.test.ts",
+      "test/dependencies.test.ts",
+      "--maxWorkers=1"
+    ],
+    "remaining_files_passed": 27,
+    "remaining_files_exit_code": 0,
+    "remaining_files_duration_seconds": 175.95,
+    "entire_root_npm_test_observed_finishing_in_one_run": false
+  },
+  "provenance": {
+    "original_summary_sha256": "c8469221f2e7e155c2090e182fd85b902899e70574011b1bef0fe9fc9e3044af",
+    "original_report_sha256": "a87707269f3f3bb86468e289877d624a31faa4cb8d345ed0cf714d93c5a31c48",
+    "legacy_combined_log_sha256": "83812bce5c8ac218f3e4b295604659d58548b531a5ca3f49b41178b2186d6324",
+    "legacy_final_log_sha256": "4a2225050e716e3eb1f7fe7c80684a4dbcff26b5c78774c634e9a12b121fe03f",
+    "note": "Compiled from retained November 14 audit records. This public summary omits local filesystem paths and private browser state. It is a record of earlier runs, not a claim that tests were rerun when this summary was published."
+  }
+}

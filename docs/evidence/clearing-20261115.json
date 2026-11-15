@@ -1,0 +1,1036 @@
+{
+  "schema_version": 1,
+  "captured_at_utc": "2026-11-15T16:43:30.650958+00:00",
+  "collection_method": "Read-only NEAR RPC queries at one finalized block; no transactions were signed or submitted.",
+  "source_commit": "823a0f05a0f443f26076682a9dc54368d4827b07",
+  "source_comparison": {
+    "archived_live_evidence_commit": "093b5ca4231c3b749dcef1c6fc6f551b64d76811",
+    "compared_with_implementation_commit": "823a0f05a0f443f26076682a9dc54368d4827b07",
+    "byte_identical_files": {
+      "contracts/ach-v4/src/lib.rs": "2c67579aff591dc02b666fafdbe197bb021f9f935fda761214ccad1316305a8c",
+      "contracts/ach-v4/src/purchases.rs": "a59c0afcefe527b2b0959b3e5b156e828dde23acb4b6caf609e23d8b16c6432b",
+      "crates/ach-protocol/src/lib.rs": "422922241be74f82303d029ed591cedcb745890eaa5e632f269ae0d3e437763a",
+      "workers/private-netting/src/lib.rs": "c19b2536aef0da7371d905d90badbe60aa6d1a98176f3f4543d85a7d59d91e1a"
+    },
+    "hash_algorithm": "SHA-256",
+    "scope": "Comparison of these four core source files only. Later services, SDK and UI changes have separately dated verification."
+  },
+  "network": "testnet",
+  "rpc_url": "https://test.rpc.fastnear.com",
+  "block_height": 277830851,
+  "block_hash": "GVLbUzjsEMfoUbDky8CSW76cgGsrt1qpAh5CJ6kkUpBs",
+  "deployment": {
+    "vault": "ach-vault-v4r2-e53eefae.testnet",
+    "token": "ach-usdc-v4r2-e53eefae.testnet",
+    "protocol_version": 4,
+    "workflow_revision": 2,
+    "vault_code_hash": "3Mh1JPqCL6kVvT8qZLmU6eexd3CyzMDAqGBatjUdLQCJ",
+    "token_code_hash": "6x3yZLWmEb27bhPuZahZiRKWAsoQxiXhVxy32qmH1P1S",
+    "private_worker": {
+      "hash": "d88bf904db9899a5a9ea56bea1ba7e417a26058a53fca00210e5f20e1384e26a",
+      "outlayer_account": "outlayer.testnet",
+      "profile": "ach-private-v4",
+      "url": "https://test.fastfs.io/ach-v4r2-demo-e53eefae.testnet/outlayer.testnet/d88bf904db9899a5a9ea56bea1ba7e417a26058a53fca00210e5f20e1384e26a.wasm"
+    }
+  },
+  "token_metadata": {
+    "decimals": 6,
+    "icon": null,
+    "name": "ACH Test USD — no monetary value",
+    "reference": null,
+    "reference_hash": null,
+    "spec": "ft-1.0.0",
+    "symbol": "tUSDC"
+  },
+  "amount_units": "Integer base units; divide by 1,000,000 for tUSDC. Test tokens have no monetary value.",
+  "summary": {
+    "registered_accounts": 202,
+    "invoices": 266,
+    "rounds": 26,
+    "settled_rounds": 26,
+    "public_rounds": 19,
+    "private_rounds": 7,
+    "completed_withdrawals": 6,
+    "test_activity_not_adoption_metrics": true
+  },
+  "backing": {
+    "total_balances": "572960000",
+    "pending_withdrawals": "0",
+    "tracked_token_custody": "572960000",
+    "independent_ft_balance_of": "572960000",
+    "claims_match_actual_custody": true
+  },
+  "queries": [
+    {
+      "account_id": "ach-vault-v4r2-e53eefae.testnet",
+      "method_name": "get_config",
+      "args": {}
+    },
+    {
+      "account_id": "ach-vault-v4r2-e53eefae.testnet",
+      "method_name": "get_backing_status",
+      "args": {}
+    },
+    {
+      "account_id": "ach-vault-v4r2-e53eefae.testnet",
+      "method_name": "list_rounds",
+      "args": {
+        "cursor": 0,
+        "limit": 100
+      }
+    },
+    {
+      "account_id": "ach-vault-v4r2-e53eefae.testnet",
+      "method_name": "list_withdrawals",
+      "args": {
+        "cursor": 0,
+        "limit": 100
+      }
+    },
+    {
+      "account_id": "ach-usdc-v4r2-e53eefae.testnet",
+      "method_name": "ft_balance_of",
+      "args": {
+        "account_id": "ach-vault-v4r2-e53eefae.testnet"
+      }
+    },
+    {
+      "account_id": "ach-usdc-v4r2-e53eefae.testnet",
+      "method_name": "ft_metadata",
+      "args": {}
+    },
+    {
+      "account_id": "ach-vault-v4r2-e53eefae.testnet",
+      "request_type": "view_account"
+    },
+    {
+      "account_id": "ach-usdc-v4r2-e53eefae.testnet",
+      "request_type": "view_account"
+    }
+  ],
+  "pagination": {
+    "rounds_next_cursor": null,
+    "withdrawals_next_cursor": null
+  },
+  "rounds": [
+    {
+      "reference": "maximum_invoice_fixture_1",
+      "id": "pg-8c78276bf975fdfeaa9569cf0a29aa93-scale-b68a0760dbbbe597-a3-0ggggggggggggggggggggggggggggggggg",
+      "hash": "62c2b2a631c6142eb8c756a3f63f33919757ed9a5c04a4ab063a2efc2afa01fd",
+      "status": "SETTLED",
+      "private": false,
+      "participants": 12,
+      "invoices": 48,
+      "approvals": 12,
+      "gross_invoice_volume": "633825300114114700748351602656",
+      "net_settlement_volume": "0",
+      "positions": [
+        {
+          "account_id": "g00-b68a0760xxxxxxxxxxxxxxxxxxxxx.ach-v4r2-demo-e53eefae.testnet",
+          "net": "0"
+        },
+        {
+          "account_id": "g01-b68a0760xxxxxxxxxxxxxxxxxxxxx.ach-v4r2-demo-e53eefae.testnet",
+          "net": "0"
+        },
+        {
+          "account_id": "g02-b68a0760xxxxxxxxxxxxxxxxxxxxx.ach-v4r2-demo-e53eefae.testnet",
+          "net": "0"
+        },
+        {
+          "account_id": "g03-b68a0760xxxxxxxxxxxxxxxxxxxxx.ach-v4r2-demo-e53eefae.testnet",
+          "net": "0"
+        },
+        {
+          "account_id": "g04-b68a0760xxxxxxxxxxxxxxxxxxxxx.ach-v4r2-demo-e53eefae.testnet",
+          "net": "0"
+        },
+        {
+          "account_id": "g05-b68a0760xxxxxxxxxxxxxxxxxxxxx.ach-v4r2-demo-e53eefae.testnet",
+          "net": "0"
+        },
+        {
+          "account_id": "g06-b68a0760xxxxxxxxxxxxxxxxxxxxx.ach-v4r2-demo-e53eefae.testnet",
+          "net": "0"
+        },
+        {
+          "account_id": "g07-b68a0760xxxxxxxxxxxxxxxxxxxxx.ach-v4r2-demo-e53eefae.testnet",
+          "net": "0"
+        },
+        {
+          "account_id": "g08-b68a0760xxxxxxxxxxxxxxxxxxxxx.ach-v4r2-demo-e53eefae.testnet",
+          "net": "0"
+        },
+        {
+          "account_id": "g09-b68a0760xxxxxxxxxxxxxxxxxxxxx.ach-v4r2-demo-e53eefae.testnet",
+          "net": "0"
+        },
+        {
+          "account_id": "g10-b68a0760xxxxxxxxxxxxxxxxxxxxx.ach-v4r2-demo-e53eefae.testnet",
+          "net": "0"
+        },
+        {
+          "account_id": "g11-b68a0760xxxxxxxxxxxxxxxxxxxxx.ach-v4r2-demo-e53eefae.testnet",
+          "net": "0"
+        }
+      ],
+      "worker_hash": null,
+      "settled_at_utc": "2026-11-12T10:57:19.710Z",
+      "fixture_note": "Synthetic zero-net fixture with maximum-length identifiers and large integer amounts. This value is not economic volume."
+    },
+    {
+      "reference": "maximum_invoice_fixture_2",
+      "id": "pg-8c78276bf975fdfeaa9569cf0a29aa93-scale-b68a0760dbbbe597-1gggggggggggggggggggggggggggggggggggg",
+      "hash": "b8792a22ae7b77d20aaad2a4214b736a792f6d21f3702486c5369b9d0357d642",
+      "status": "SETTLED",
+      "private": false,
+      "participants": 12,
+      "invoices": 48,
+      "approvals": 12,
+      "gross_invoice_volume": "633825300114114700748351602656",
+      "net_settlement_volume": "0",
+      "positions": [
+        {
+          "account_id": "g00-b68a0760xxxxxxxxxxxxxxxxxxxxx.ach-v4r2-demo-e53eefae.testnet",
+          "net": "0"
+        },
+        {
+          "account_id": "g01-b68a0760xxxxxxxxxxxxxxxxxxxxx.ach-v4r2-demo-e53eefae.testnet",
+          "net": "0"
+        },
+        {
+          "account_id": "g02-b68a0760xxxxxxxxxxxxxxxxxxxxx.ach-v4r2-demo-e53eefae.testnet",
+          "net": "0"
+        },
+        {
+          "account_id": "g03-b68a0760xxxxxxxxxxxxxxxxxxxxx.ach-v4r2-demo-e53eefae.testnet",
+          "net": "0"
+        },
+        {
+          "account_id": "g04-b68a0760xxxxxxxxxxxxxxxxxxxxx.ach-v4r2-demo-e53eefae.testnet",
+          "net": "0"
+        },
+        {
+          "account_id": "g05-b68a0760xxxxxxxxxxxxxxxxxxxxx.ach-v4r2-demo-e53eefae.testnet",
+          "net": "0"
+        },
+        {
+          "account_id": "g06-b68a0760xxxxxxxxxxxxxxxxxxxxx.ach-v4r2-demo-e53eefae.testnet",
+          "net": "0"
+        },
+        {
+          "account_id": "g07-b68a0760xxxxxxxxxxxxxxxxxxxxx.ach-v4r2-demo-e53eefae.testnet",
+          "net": "0"
+        },
+        {
+          "account_id": "g08-b68a0760xxxxxxxxxxxxxxxxxxxxx.ach-v4r2-demo-e53eefae.testnet",
+          "net": "0"
+        },
+        {
+          "account_id": "g09-b68a0760xxxxxxxxxxxxxxxxxxxxx.ach-v4r2-demo-e53eefae.testnet",
+          "net": "0"
+        },
+        {
+          "account_id": "g10-b68a0760xxxxxxxxxxxxxxxxxxxxx.ach-v4r2-demo-e53eefae.testnet",
+          "net": "0"
+        },
+        {
+          "account_id": "g11-b68a0760xxxxxxxxxxxxxxxxxxxxx.ach-v4r2-demo-e53eefae.testnet",
+          "net": "0"
+        }
+      ],
+      "worker_hash": null,
+      "settled_at_utc": "2026-11-12T10:58:16.208Z",
+      "fixture_note": "Synthetic zero-net fixture with maximum-length identifiers and large integer amounts. This value is not economic volume."
+    },
+    {
+      "reference": "public_service",
+      "id": "pg-be5a3222915fa7067635386a77783765-4b373d6939de8b9a99fd526ed607bee6",
+      "hash": "e16740b4f819aac7682ebb6ab5dc0342ed00310089f0e370e0c670a7bdcafb10",
+      "status": "SETTLED",
+      "private": false,
+      "participants": 3,
+      "invoices": 3,
+      "approvals": 3,
+      "gross_invoice_volume": "280000",
+      "net_settlement_volume": "20000",
+      "positions": [
+        {
+          "account_id": "a-efcd427eda5b.ach-v4r2-demo-e53eefae.testnet",
+          "net": "20000"
+        },
+        {
+          "account_id": "r-efcd427eda5b.ach-v4r2-demo-e53eefae.testnet",
+          "net": "-20000"
+        },
+        {
+          "account_id": "v-efcd427eda5b.ach-v4r2-demo-e53eefae.testnet",
+          "net": "0"
+        }
+      ],
+      "worker_hash": null,
+      "settled_at_utc": "2026-11-12T11:07:43.384Z"
+    },
+    {
+      "reference": "single_purchase",
+      "id": "pg-be5a3222915fa7067635386a77783765-19bd57399ce1475090cfe940cb6115bf",
+      "hash": "26945a79fda5ae14888ee992f14d9e5e231db667782da75d160579a1d21ce99e",
+      "status": "SETTLED",
+      "private": false,
+      "participants": 2,
+      "invoices": 1,
+      "approvals": 2,
+      "gross_invoice_volume": "100000",
+      "net_settlement_volume": "100000",
+      "positions": [
+        {
+          "account_id": "r-efcd427eda5b.ach-v4r2-demo-e53eefae.testnet",
+          "net": "-100000"
+        },
+        {
+          "account_id": "v-efcd427eda5b.ach-v4r2-demo-e53eefae.testnet",
+          "net": "100000"
+        }
+      ],
+      "worker_hash": null,
+      "settled_at_utc": "2026-11-12T11:12:11.265Z"
+    },
+    {
+      "reference": "private_service",
+      "id": "pg-f49b51a6fa44e671d55924a58b05a3cc-5d2a638ec6d7fc02e14d761af67fa2d9-net-0",
+      "hash": "9b49e431ce8d2ded755c2cc91052321fcd5e816a1e59bff4f178a033049ea9e1",
+      "status": "SETTLED",
+      "private": true,
+      "participants": 3,
+      "invoices": 3,
+      "approvals": 3,
+      "gross_invoice_volume": null,
+      "net_settlement_volume": "20000",
+      "positions": [
+        {
+          "account_id": "a-e263a2d857e3.ach-v4r2-demo-e53eefae.testnet",
+          "net": "20000"
+        },
+        {
+          "account_id": "r-e263a2d857e3.ach-v4r2-demo-e53eefae.testnet",
+          "net": "-20000"
+        },
+        {
+          "account_id": "v-e263a2d857e3.ach-v4r2-demo-e53eefae.testnet",
+          "net": "0"
+        }
+      ],
+      "worker_hash": "d88bf904db9899a5a9ea56bea1ba7e417a26058a53fca00210e5f20e1384e26a",
+      "settled_at_utc": "2026-11-12T11:28:47.980Z"
+    },
+    {
+      "id": "pg-28fca7adcb5e5b4a780d736c63844965-4b5b2e9e137044b5bff5fa5bf42f9158",
+      "hash": "1426190cf8140098b0505c00a5670cd134996647e330f24630c88eec5db9fe0d",
+      "status": "SETTLED",
+      "private": false,
+      "participants": 3,
+      "invoices": 3,
+      "approvals": 3,
+      "gross_invoice_volume": "280000",
+      "net_settlement_volume": "20000",
+      "positions": [
+        {
+          "account_id": "a-c38eecb43aac.ach-v4r2-demo-e53eefae.testnet",
+          "net": "20000"
+        },
+        {
+          "account_id": "r-c38eecb43aac.ach-v4r2-demo-e53eefae.testnet",
+          "net": "-20000"
+        },
+        {
+          "account_id": "v-c38eecb43aac.ach-v4r2-demo-e53eefae.testnet",
+          "net": "0"
+        }
+      ],
+      "worker_hash": null,
+      "settled_at_utc": "2026-11-12T13:20:16.197Z"
+    },
+    {
+      "id": "pg-28fca7adcb5e5b4a780d736c63844965-984a9eaabed24f3ea32cf4181e421910-net-0",
+      "hash": "c04843cd027473ef29ee639ac00f5090c00fdb5782e157470e679bdd3996f9a1",
+      "status": "SETTLED",
+      "private": true,
+      "participants": 3,
+      "invoices": 3,
+      "approvals": 3,
+      "gross_invoice_volume": null,
+      "net_settlement_volume": "20000",
+      "positions": [
+        {
+          "account_id": "a-c38eecb43aac.ach-v4r2-demo-e53eefae.testnet",
+          "net": "20000"
+        },
+        {
+          "account_id": "r-c38eecb43aac.ach-v4r2-demo-e53eefae.testnet",
+          "net": "-20000"
+        },
+        {
+          "account_id": "v-c38eecb43aac.ach-v4r2-demo-e53eefae.testnet",
+          "net": "0"
+        }
+      ],
+      "worker_hash": "d88bf904db9899a5a9ea56bea1ba7e417a26058a53fca00210e5f20e1384e26a",
+      "settled_at_utc": "2026-11-12T14:08:36.379Z"
+    },
+    {
+      "id": "pg-28fca7adcb5e5b4a780d736c63844965-57a81d85680a45159501d1d9a8d92acb",
+      "hash": "9f9780681246ae018fd43f90bbe1452340fda25b767828968795dc8ab65646e5",
+      "status": "SETTLED",
+      "private": false,
+      "participants": 3,
+      "invoices": 3,
+      "approvals": 3,
+      "gross_invoice_volume": "280000",
+      "net_settlement_volume": "20000",
+      "positions": [
+        {
+          "account_id": "a-c38eecb43aac.ach-v4r2-demo-e53eefae.testnet",
+          "net": "20000"
+        },
+        {
+          "account_id": "r-c38eecb43aac.ach-v4r2-demo-e53eefae.testnet",
+          "net": "-20000"
+        },
+        {
+          "account_id": "v-c38eecb43aac.ach-v4r2-demo-e53eefae.testnet",
+          "net": "0"
+        }
+      ],
+      "worker_hash": null,
+      "settled_at_utc": "2026-11-12T14:14:07.034Z"
+    },
+    {
+      "id": "pg-1ab9e530071048754122d7dfc714ad1e-bc37af2706d4410796fbdbc4c9b911f5",
+      "hash": "6ab0e709b0ea426b67c07d819240973014ccb803ae5cb7fb84a96812d1e599e2",
+      "status": "SETTLED",
+      "private": false,
+      "participants": 3,
+      "invoices": 3,
+      "approvals": 3,
+      "gross_invoice_volume": "280000",
+      "net_settlement_volume": "20000",
+      "positions": [
+        {
+          "account_id": "a-69ca66706a92.ach-v4r2-demo-e53eefae.testnet",
+          "net": "20000"
+        },
+        {
+          "account_id": "r-69ca66706a92.ach-v4r2-demo-e53eefae.testnet",
+          "net": "-20000"
+        },
+        {
+          "account_id": "v-69ca66706a92.ach-v4r2-demo-e53eefae.testnet",
+          "net": "0"
+        }
+      ],
+      "worker_hash": null,
+      "settled_at_utc": "2026-11-12T14:40:40.370Z"
+    },
+    {
+      "id": "pg-1ab9e530071048754122d7dfc714ad1e-c17abf724bed43ec9f50c88c5221f20b-net-0",
+      "hash": "f84cd3e3221ec06b3de8de8977081ac7c7c8c93c5523daba9d277d5f74a13523",
+      "status": "SETTLED",
+      "private": true,
+      "participants": 3,
+      "invoices": 3,
+      "approvals": 3,
+      "gross_invoice_volume": null,
+      "net_settlement_volume": "20000",
+      "positions": [
+        {
+          "account_id": "a-69ca66706a92.ach-v4r2-demo-e53eefae.testnet",
+          "net": "20000"
+        },
+        {
+          "account_id": "r-69ca66706a92.ach-v4r2-demo-e53eefae.testnet",
+          "net": "-20000"
+        },
+        {
+          "account_id": "v-69ca66706a92.ach-v4r2-demo-e53eefae.testnet",
+          "net": "0"
+        }
+      ],
+      "worker_hash": "d88bf904db9899a5a9ea56bea1ba7e417a26058a53fca00210e5f20e1384e26a",
+      "settled_at_utc": "2026-11-12T15:01:47.608Z"
+    },
+    {
+      "id": "pg-1ab9e530071048754122d7dfc714ad1e-2de87568031e4ed0be94f84c13e82180",
+      "hash": "9b5630bdefae4a3e3e9cc39a7747227f9c7a5c15166cfd6da0378c74dbdeab64",
+      "status": "SETTLED",
+      "private": false,
+      "participants": 3,
+      "invoices": 3,
+      "approvals": 3,
+      "gross_invoice_volume": "280000",
+      "net_settlement_volume": "20000",
+      "positions": [
+        {
+          "account_id": "a-69ca66706a92.ach-v4r2-demo-e53eefae.testnet",
+          "net": "20000"
+        },
+        {
+          "account_id": "r-69ca66706a92.ach-v4r2-demo-e53eefae.testnet",
+          "net": "-20000"
+        },
+        {
+          "account_id": "v-69ca66706a92.ach-v4r2-demo-e53eefae.testnet",
+          "net": "0"
+        }
+      ],
+      "worker_hash": null,
+      "settled_at_utc": "2026-11-12T15:05:56.296Z"
+    },
+    {
+      "id": "pg-0ed6c94b4af4db4c31b2ac20036a4d75-fc8f323791764bbb80abb2886887a4c1",
+      "hash": "09f92bc802c674f5ef7c6f54ec6bcce788749cc771dbd028771c605b0c4c75d0",
+      "status": "SETTLED",
+      "private": false,
+      "participants": 3,
+      "invoices": 3,
+      "approvals": 3,
+      "gross_invoice_volume": "280000",
+      "net_settlement_volume": "20000",
+      "positions": [
+        {
+          "account_id": "a-04cb5c246c7d.ach-v4r2-demo-e53eefae.testnet",
+          "net": "20000"
+        },
+        {
+          "account_id": "r-04cb5c246c7d.ach-v4r2-demo-e53eefae.testnet",
+          "net": "-20000"
+        },
+        {
+          "account_id": "v-04cb5c246c7d.ach-v4r2-demo-e53eefae.testnet",
+          "net": "0"
+        }
+      ],
+      "worker_hash": null,
+      "settled_at_utc": "2026-11-12T15:13:08.338Z"
+    },
+    {
+      "id": "pg-1ab9e530071048754122d7dfc714ad1e-ab35d5c5d10c48a387f4d1ac3b7de200",
+      "hash": "58f81e063cfe230a1d10276638cec2a1ce1030c84bf9c5b8ad3aa2bbc951fddd",
+      "status": "SETTLED",
+      "private": false,
+      "participants": 3,
+      "invoices": 3,
+      "approvals": 3,
+      "gross_invoice_volume": "280000",
+      "net_settlement_volume": "20000",
+      "positions": [
+        {
+          "account_id": "a-69ca66706a92.ach-v4r2-demo-e53eefae.testnet",
+          "net": "20000"
+        },
+        {
+          "account_id": "r-69ca66706a92.ach-v4r2-demo-e53eefae.testnet",
+          "net": "-20000"
+        },
+        {
+          "account_id": "v-69ca66706a92.ach-v4r2-demo-e53eefae.testnet",
+          "net": "0"
+        }
+      ],
+      "worker_hash": null,
+      "settled_at_utc": "2026-11-12T15:46:03.563Z"
+    },
+    {
+      "id": "pg-6a422e17cb1ea957c038be72a55acbde-3b63b0f58e144f68a6a538dd991e2d5a",
+      "hash": "f2ae05b86cc015d10564f4a928cca876542b5a4f08f2fc64c98ef40914d43b27",
+      "status": "SETTLED",
+      "private": false,
+      "participants": 3,
+      "invoices": 3,
+      "approvals": 3,
+      "gross_invoice_volume": "280000",
+      "net_settlement_volume": "20000",
+      "positions": [
+        {
+          "account_id": "a-242973af724b.ach-v4r2-demo-e53eefae.testnet",
+          "net": "20000"
+        },
+        {
+          "account_id": "r-242973af724b.ach-v4r2-demo-e53eefae.testnet",
+          "net": "-20000"
+        },
+        {
+          "account_id": "v-242973af724b.ach-v4r2-demo-e53eefae.testnet",
+          "net": "0"
+        }
+      ],
+      "worker_hash": null,
+      "settled_at_utc": "2026-11-12T15:58:22.120Z"
+    },
+    {
+      "id": "pg-d521c4fc30f9c1be15f98d8962034f87-786e3ae2cf6246d9ad74acbba387be5b",
+      "hash": "30ffb94fe1712139e33bb008f8f815e814f7c279d18c2e583dee066f1603c1e0",
+      "status": "SETTLED",
+      "private": false,
+      "participants": 3,
+      "invoices": 3,
+      "approvals": 3,
+      "gross_invoice_volume": "280000",
+      "net_settlement_volume": "20000",
+      "positions": [
+        {
+          "account_id": "a-4704e97cf502.ach-v4r2-demo-e53eefae.testnet",
+          "net": "20000"
+        },
+        {
+          "account_id": "r-4704e97cf502.ach-v4r2-demo-e53eefae.testnet",
+          "net": "-20000"
+        },
+        {
+          "account_id": "v-4704e97cf502.ach-v4r2-demo-e53eefae.testnet",
+          "net": "0"
+        }
+      ],
+      "worker_hash": null,
+      "settled_at_utc": "2026-11-12T16:37:49.814Z"
+    },
+    {
+      "id": "pg-d521c4fc30f9c1be15f98d8962034f87-19c86a91dc73430f913ebb8ab8cfd26e-net-0",
+      "hash": "b04cac22efad645ac706c99b8783a16f88d0f6a2b738d7b3a1a05a563119e890",
+      "status": "SETTLED",
+      "private": true,
+      "participants": 3,
+      "invoices": 3,
+      "approvals": 3,
+      "gross_invoice_volume": null,
+      "net_settlement_volume": "20000",
+      "positions": [
+        {
+          "account_id": "a-4704e97cf502.ach-v4r2-demo-e53eefae.testnet",
+          "net": "20000"
+        },
+        {
+          "account_id": "r-4704e97cf502.ach-v4r2-demo-e53eefae.testnet",
+          "net": "-20000"
+        },
+        {
+          "account_id": "v-4704e97cf502.ach-v4r2-demo-e53eefae.testnet",
+          "net": "0"
+        }
+      ],
+      "worker_hash": "d88bf904db9899a5a9ea56bea1ba7e417a26058a53fca00210e5f20e1384e26a",
+      "settled_at_utc": "2026-11-12T17:37:16.260Z"
+    },
+    {
+      "id": "pg-e5c4f780a5259b26a77b29ab50566b52-53f8b7317cf14feeb53b4b0a9e756daf",
+      "hash": "82d7a5520ab9f5fb79d36dbdb8d86642621ab46e243fbcd9bd993fb62dbf15c0",
+      "status": "SETTLED",
+      "private": false,
+      "participants": 3,
+      "invoices": 3,
+      "approvals": 3,
+      "gross_invoice_volume": "280000",
+      "net_settlement_volume": "20000",
+      "positions": [
+        {
+          "account_id": "a-1aa9c5debc4d.ach-v4r2-demo-e53eefae.testnet",
+          "net": "20000"
+        },
+        {
+          "account_id": "r-1aa9c5debc4d.ach-v4r2-demo-e53eefae.testnet",
+          "net": "-20000"
+        },
+        {
+          "account_id": "v-1aa9c5debc4d.ach-v4r2-demo-e53eefae.testnet",
+          "net": "0"
+        }
+      ],
+      "worker_hash": null,
+      "settled_at_utc": "2026-11-12T18:01:34.684Z"
+    },
+    {
+      "id": "pg-e5c4f780a5259b26a77b29ab50566b52-0b90c395e88142209f759d802d54533b-net-0",
+      "hash": "450c0665578a14225d5e4ec07ef9b4abbe4abcf69648c4ae08434e1da5f13fd0",
+      "status": "SETTLED",
+      "private": true,
+      "participants": 3,
+      "invoices": 3,
+      "approvals": 3,
+      "gross_invoice_volume": null,
+      "net_settlement_volume": "20000",
+      "positions": [
+        {
+          "account_id": "a-1aa9c5debc4d.ach-v4r2-demo-e53eefae.testnet",
+          "net": "20000"
+        },
+        {
+          "account_id": "r-1aa9c5debc4d.ach-v4r2-demo-e53eefae.testnet",
+          "net": "-20000"
+        },
+        {
+          "account_id": "v-1aa9c5debc4d.ach-v4r2-demo-e53eefae.testnet",
+          "net": "0"
+        }
+      ],
+      "worker_hash": "d88bf904db9899a5a9ea56bea1ba7e417a26058a53fca00210e5f20e1384e26a",
+      "settled_at_utc": "2026-11-12T18:10:29.819Z"
+    },
+    {
+      "id": "pg-e5c4f780a5259b26a77b29ab50566b52-daaf6ebe8f54486b878818a817360b1c",
+      "hash": "4139ebbdbb565043f247624f628382114cc4a17ff29b2c80b4d09f9e87570aa5",
+      "status": "SETTLED",
+      "private": false,
+      "participants": 3,
+      "invoices": 3,
+      "approvals": 3,
+      "gross_invoice_volume": "280000",
+      "net_settlement_volume": "20000",
+      "positions": [
+        {
+          "account_id": "a-1aa9c5debc4d.ach-v4r2-demo-e53eefae.testnet",
+          "net": "20000"
+        },
+        {
+          "account_id": "r-1aa9c5debc4d.ach-v4r2-demo-e53eefae.testnet",
+          "net": "-20000"
+        },
+        {
+          "account_id": "v-1aa9c5debc4d.ach-v4r2-demo-e53eefae.testnet",
+          "net": "0"
+        }
+      ],
+      "worker_hash": null,
+      "settled_at_utc": "2026-11-12T18:13:20.938Z"
+    },
+    {
+      "id": "pg-65ed4781f0c33946f2d0d21d829d259f-bd964d0424124476b33365fe57939ad6",
+      "hash": "6017bd3d3122b7cf48deaf230c950fbf815a5885f56f7eace40902a38b44779a",
+      "status": "SETTLED",
+      "private": false,
+      "participants": 3,
+      "invoices": 3,
+      "approvals": 3,
+      "gross_invoice_volume": "280000",
+      "net_settlement_volume": "20000",
+      "positions": [
+        {
+          "account_id": "a-ce87366bb737.ach-v4r2-demo-e53eefae.testnet",
+          "net": "20000"
+        },
+        {
+          "account_id": "r-ce87366bb737.ach-v4r2-demo-e53eefae.testnet",
+          "net": "-20000"
+        },
+        {
+          "account_id": "v-ce87366bb737.ach-v4r2-demo-e53eefae.testnet",
+          "net": "0"
+        }
+      ],
+      "worker_hash": null,
+      "settled_at_utc": "2026-11-12T18:24:37.233Z"
+    },
+    {
+      "id": "pg-e5c4f780a5259b26a77b29ab50566b52-3cf14deed8914f788be5fe518b9ce6a0",
+      "hash": "6245eb8bf50f4ef9d9ccd40bbc479d4d69fdf1968739afca39ae10a39b4a3fea",
+      "status": "SETTLED",
+      "private": false,
+      "participants": 3,
+      "invoices": 3,
+      "approvals": 3,
+      "gross_invoice_volume": "280000",
+      "net_settlement_volume": "20000",
+      "positions": [
+        {
+          "account_id": "a-1aa9c5debc4d.ach-v4r2-demo-e53eefae.testnet",
+          "net": "20000"
+        },
+        {
+          "account_id": "r-1aa9c5debc4d.ach-v4r2-demo-e53eefae.testnet",
+          "net": "-20000"
+        },
+        {
+          "account_id": "v-1aa9c5debc4d.ach-v4r2-demo-e53eefae.testnet",
+          "net": "0"
+        }
+      ],
+      "worker_hash": null,
+      "settled_at_utc": "2026-11-12T19:38:00.564Z"
+    },
+    {
+      "id": "pg-5f2ca65c4b90a4a2137eb3d9df0bc73f-922be869b2a64fd89d04930e3ab98eaf",
+      "hash": "b3953c5aaf231432fd07d457cce47318c2e207e1a026c3400e245b1f689f6471",
+      "status": "SETTLED",
+      "private": false,
+      "participants": 3,
+      "invoices": 3,
+      "approvals": 3,
+      "gross_invoice_volume": "280000",
+      "net_settlement_volume": "20000",
+      "positions": [
+        {
+          "account_id": "a-0702cad3ede4.ach-v4r2-demo-e53eefae.testnet",
+          "net": "20000"
+        },
+        {
+          "account_id": "r-0702cad3ede4.ach-v4r2-demo-e53eefae.testnet",
+          "net": "-20000"
+        },
+        {
+          "account_id": "v-0702cad3ede4.ach-v4r2-demo-e53eefae.testnet",
+          "net": "0"
+        }
+      ],
+      "worker_hash": null,
+      "settled_at_utc": "2026-11-12T19:46:58.391Z"
+    },
+    {
+      "id": "pg-fdc7c4f32afa746f718bce1ac96d31e6-2ed3a9ca54e04c12aacff4a74333b1ef",
+      "hash": "8cc4294cfb08d70b808c4eb5479fedcf0b4f58744b2d894af9f5ea4cc4543e85",
+      "status": "SETTLED",
+      "private": false,
+      "participants": 3,
+      "invoices": 3,
+      "approvals": 3,
+      "gross_invoice_volume": "280000",
+      "net_settlement_volume": "20000",
+      "positions": [
+        {
+          "account_id": "a-2311f35fb20e.ach-v4r2-demo-e53eefae.testnet",
+          "net": "20000"
+        },
+        {
+          "account_id": "r-2311f35fb20e.ach-v4r2-demo-e53eefae.testnet",
+          "net": "-20000"
+        },
+        {
+          "account_id": "v-2311f35fb20e.ach-v4r2-demo-e53eefae.testnet",
+          "net": "0"
+        }
+      ],
+      "worker_hash": null,
+      "settled_at_utc": "2026-11-13T22:20:46.509Z"
+    },
+    {
+      "id": "pg-fdc7c4f32afa746f718bce1ac96d31e6-908d638fa0e34bb1a8c70eecb510a524-net-0",
+      "hash": "2f1aed7dbc65d491146ecdcfebbccff83294c2979ee509018ddd64d9e3328650",
+      "status": "SETTLED",
+      "private": true,
+      "participants": 3,
+      "invoices": 3,
+      "approvals": 3,
+      "gross_invoice_volume": null,
+      "net_settlement_volume": "20000",
+      "positions": [
+        {
+          "account_id": "a-2311f35fb20e.ach-v4r2-demo-e53eefae.testnet",
+          "net": "20000"
+        },
+        {
+          "account_id": "r-2311f35fb20e.ach-v4r2-demo-e53eefae.testnet",
+          "net": "-20000"
+        },
+        {
+          "account_id": "v-2311f35fb20e.ach-v4r2-demo-e53eefae.testnet",
+          "net": "0"
+        }
+      ],
+      "worker_hash": "d88bf904db9899a5a9ea56bea1ba7e417a26058a53fca00210e5f20e1384e26a",
+      "settled_at_utc": "2026-11-13T22:23:27.150Z"
+    },
+    {
+      "reference": "public_twelve_agents",
+      "id": "pg-cdc3479f969f25520dd7e01e3a1c7b1c-judge-3bdea66467a9903e38fc68335fe8c6ec",
+      "hash": "cb24ed999dad53917badced77cee3b926f7c3a04b4eb348c96acd9dafd4a0e14",
+      "status": "SETTLED",
+      "private": false,
+      "participants": 12,
+      "invoices": 12,
+      "approvals": 12,
+      "gross_invoice_volume": "980000",
+      "net_settlement_volume": "20000",
+      "positions": [
+        {
+          "account_id": "a-901c694b95ae.ach-v4r2-demo-e53eefae.testnet",
+          "net": "0"
+        },
+        {
+          "account_id": "r-901c694b95ae.ach-v4r2-demo-e53eefae.testnet",
+          "net": "-20000"
+        },
+        {
+          "account_id": "t10-901c694b95ae.ach-v4r2-demo-e53eefae.testnet",
+          "net": "0"
+        },
+        {
+          "account_id": "t11-901c694b95ae.ach-v4r2-demo-e53eefae.testnet",
+          "net": "0"
+        },
+        {
+          "account_id": "t12-901c694b95ae.ach-v4r2-demo-e53eefae.testnet",
+          "net": "0"
+        },
+        {
+          "account_id": "t4-901c694b95ae.ach-v4r2-demo-e53eefae.testnet",
+          "net": "0"
+        },
+        {
+          "account_id": "t5-901c694b95ae.ach-v4r2-demo-e53eefae.testnet",
+          "net": "0"
+        },
+        {
+          "account_id": "t6-901c694b95ae.ach-v4r2-demo-e53eefae.testnet",
+          "net": "0"
+        },
+        {
+          "account_id": "t7-901c694b95ae.ach-v4r2-demo-e53eefae.testnet",
+          "net": "0"
+        },
+        {
+          "account_id": "t8-901c694b95ae.ach-v4r2-demo-e53eefae.testnet",
+          "net": "0"
+        },
+        {
+          "account_id": "t9-901c694b95ae.ach-v4r2-demo-e53eefae.testnet",
+          "net": "0"
+        },
+        {
+          "account_id": "v-901c694b95ae.ach-v4r2-demo-e53eefae.testnet",
+          "net": "20000"
+        }
+      ],
+      "worker_hash": null,
+      "settled_at_utc": "2026-11-13T22:58:37.322Z"
+    },
+    {
+      "reference": "private_twelve_agents",
+      "id": "pg-cdc3479f969f25520dd7e01e3a1c7b1c-judge-ca431414d8e2b33ecebe0dfe7ea855f1-net-0",
+      "hash": "5338b710c65d0a38907714f7b3bf56b5c0bc0d9125a1995e0a70565674346d44",
+      "status": "SETTLED",
+      "private": true,
+      "participants": 12,
+      "invoices": 6,
+      "approvals": 12,
+      "gross_invoice_volume": null,
+      "net_settlement_volume": "500000",
+      "positions": [
+        {
+          "account_id": "a-901c694b95ae.ach-v4r2-demo-e53eefae.testnet",
+          "net": "80000"
+        },
+        {
+          "account_id": "r-901c694b95ae.ach-v4r2-demo-e53eefae.testnet",
+          "net": "-100000"
+        },
+        {
+          "account_id": "t10-901c694b95ae.ach-v4r2-demo-e53eefae.testnet",
+          "net": "-80000"
+        },
+        {
+          "account_id": "t11-901c694b95ae.ach-v4r2-demo-e53eefae.testnet",
+          "net": "80000"
+        },
+        {
+          "account_id": "t12-901c694b95ae.ach-v4r2-demo-e53eefae.testnet",
+          "net": "-80000"
+        },
+        {
+          "account_id": "t4-901c694b95ae.ach-v4r2-demo-e53eefae.testnet",
+          "net": "-80000"
+        },
+        {
+          "account_id": "t5-901c694b95ae.ach-v4r2-demo-e53eefae.testnet",
+          "net": "80000"
+        },
+        {
+          "account_id": "t6-901c694b95ae.ach-v4r2-demo-e53eefae.testnet",
+          "net": "-80000"
+        },
+        {
+          "account_id": "t7-901c694b95ae.ach-v4r2-demo-e53eefae.testnet",
+          "net": "80000"
+        },
+        {
+          "account_id": "t8-901c694b95ae.ach-v4r2-demo-e53eefae.testnet",
+          "net": "-80000"
+        },
+        {
+          "account_id": "t9-901c694b95ae.ach-v4r2-demo-e53eefae.testnet",
+          "net": "80000"
+        },
+        {
+          "account_id": "v-901c694b95ae.ach-v4r2-demo-e53eefae.testnet",
+          "net": "100000"
+        }
+      ],
+      "worker_hash": "d88bf904db9899a5a9ea56bea1ba7e417a26058a53fca00210e5f20e1384e26a",
+      "settled_at_utc": "2026-11-13T23:01:07.254Z"
+    }
+  ],
+  "withdrawals": [
+    {
+      "account_id": "a-efcd427eda5b.ach-v4r2-demo-e53eefae.testnet",
+      "activity_sequence": 5,
+      "amount": "20000",
+      "completed_at_ms": 1794481670840,
+      "id": "withdraw-18ce9010fcc91d99d3436869a7d411df",
+      "receiver_id": "a-efcd427eda5b.ach-v4r2-demo-e53eefae.testnet",
+      "requested_at_ms": 1794481669706,
+      "sequence": 0,
+      "status": "COMPLETED"
+    },
+    {
+      "account_id": "a-e263a2d857e3.ach-v4r2-demo-e53eefae.testnet",
+      "activity_sequence": 5,
+      "amount": "20000",
+      "completed_at_ms": 1794482991859,
+      "id": "withdraw-576aea3b98b4c3aca0137bac3d6766d3",
+      "receiver_id": "a-e263a2d857e3.ach-v4r2-demo-e53eefae.testnet",
+      "requested_at_ms": 1794482990656,
+      "sequence": 1,
+      "status": "COMPLETED"
+    },
+    {
+      "account_id": "a-c38eecb43aac.ach-v4r2-demo-e53eefae.testnet",
+      "activity_sequence": 5,
+      "amount": "10000",
+      "completed_at_ms": 1794492105825,
+      "id": "withdraw-d3b82d66364947109357f55c4c88b121",
+      "receiver_id": "a-c38eecb43aac.ach-v4r2-demo-e53eefae.testnet",
+      "requested_at_ms": 1794492104614,
+      "sequence": 2,
+      "status": "COMPLETED"
+    },
+    {
+      "account_id": "a-69ca66706a92.ach-v4r2-demo-e53eefae.testnet",
+      "activity_sequence": 5,
+      "amount": "10000",
+      "completed_at_ms": 1794494567245,
+      "id": "withdraw-d1e8caeb8d984ea3b4270c268d733613",
+      "receiver_id": "a-69ca66706a92.ach-v4r2-demo-e53eefae.testnet",
+      "requested_at_ms": 1794494566241,
+      "sequence": 3,
+      "status": "COMPLETED"
+    },
+    {
+      "account_id": "a-4704e97cf502.ach-v4r2-demo-e53eefae.testnet",
+      "activity_sequence": 5,
+      "amount": "10000",
+      "completed_at_ms": 1794501511569,
+      "id": "withdraw-b4c8d835384644f7ac763b07d851fc8e",
+      "receiver_id": "a-4704e97cf502.ach-v4r2-demo-e53eefae.testnet",
+      "requested_at_ms": 1794501510453,
+      "sequence": 4,
+      "status": "COMPLETED"
+    },
+    {
+      "account_id": "a-1aa9c5debc4d.ach-v4r2-demo-e53eefae.testnet",
+      "activity_sequence": 5,
+      "amount": "10000",
+      "completed_at_ms": 1794506505664,
+      "id": "withdraw-108ea5ab047b47769a4a57914e7240fa",
+      "receiver_id": "a-1aa9c5debc4d.ach-v4r2-demo-e53eefae.testnet",
+      "requested_at_ms": 1794506504384,
+      "sequence": 5,
+      "status": "COMPLETED"
+    }
+  ]
+}
