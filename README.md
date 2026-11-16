@@ -15,7 +15,7 @@ ACH gives agents wallet balances in a shared vault. They agree the complete orde
 
 Netting reduces funding needs where payments offset. Reservation locks the required cash; settlement applies the final debits and credits together.
 
-Public and private clearing have completed on NEAR testnet. [Verification records](docs/verification.md) collect settled rounds, independent token-backing checks, hosted workflow results and automated tests, with read-only steps to inspect the deployment.
+ACH has settled public and private clearing rounds on NEAR testnet. The [verification records](docs/verification.md) document **26 settled rounds**, independent token-backing checks, hosted workflow results and automated tests, with read-only steps to inspect the deployment.
 
 ## What netting does
 
@@ -36,7 +36,7 @@ The clearing result is:
 | Visual Studio | 100 | 100 | No transfer |
 | Audit Desk | 100 | 80 | Receives **20 tUSDC** |
 
-**280 tUSDC in bills clears with 20 tUSDC of settlement funding.** Each agent ends with the same balance change as paying the original bills separately. These are illustrative amounts; the hosted demo uses the same pattern with smaller test-token prices.
+**280 tUSDC in bills clears with 20 tUSDC of settlement funding.** Each agent ends with the same balance change as paying the original bills separately. The hosted workflow has settled the same pattern with **0.280 tUSDC** in bills and **0.020 tUSDC** in net funding; see the [clearing verification](docs/verification.md).
 
 Owners deposit the settlement token into ACH and credit their agents’ wallets. For this group, Research reserves 20 tUSDC. Visual and Audit need no settlement cash. Settlement debits Research by 20 tUSDC and credits Audit by 20 tUSDC.
 
@@ -46,21 +46,19 @@ Other agents can continue trading or form separate clearing groups.
 
 ## The financial precedent: CLS, 2008 and 2020
 
-Foreign exchange already operates at a scale where gross funding would be expensive. [CLSSettlement](https://www.cls-group.com/products/settlement/clssettlement/) combines multilateral netting of funding requirements with payment-versus-payment settlement. The two currency payments settle together. CLS reports funding reductions of over 96%; that figure belongs to CLS and is not an ACH benchmark.
-
-[CLSNet](https://www.cls-group.com/products/processing/clsnet/) is a separate bilateral netting-calculation service. ACH’s one-token invoice clearing is a different mechanism from settling both currency legs of an FX trade.
+Foreign exchange already operates at a scale where gross funding would be expensive. [CLSSettlement](https://www.cls-group.com/products/settlement/clssettlement/) combines multilateral netting of funding requirements with payment-versus-payment settlement. The two currency payments settle together. CLS reports funding reductions of over 96%.
 
 In the 2008 crisis, dependence on short-term funding, leverage and uncertain exposures helped turn losses into widespread liquidity stress. The [Federal Reserve’s September 2010 account](https://www.federalreserve.gov/newsevents/testimony/bernanke20100902a.htm) describes those mechanisms. In its [April 2020 resilience account](https://www.cls-group.com/insights/the-fx-ecosystem/covid-19-and-the-importance-of-resilient-financial-market-infrastructures/), CLS describes banks relying on final FX settlement during 2008.
 
 The pandemic shock of 2020 caused another sharp demand for dollar funding. [BIS Bulletin 1](https://www.bis.org/publ/bisbull01.htm) documents the pressure in FX swap markets. CLS reported March daily payment volumes about 20% above normal without issues or delays. Net funding, settlement controls and operational resilience all contributed to that outcome.
 
-A future agent economy could face similar payment pressure if many agents need cash at the same time or depend on receipts that have not settled. Netting reduces the cash needed to clear offsetting obligations; net debtors supply the remaining funding.
+ACH applies this funding principle to agent commerce. It offsets agreed receivables against payables, reserves each net debtor’s obligation and settles the complete group together.
 
-The direction toward agent commerce is supported by the [OpenAI and Stripe Agentic Commerce Protocol](https://github.com/agentic-commerce-protocol/agentic-commerce-protocol). ACH’s proposed market scale is a long-term vision, not a claim about the number of agents trading today or this prototype’s throughput.
+The [OpenAI and Stripe Agentic Commerce Protocol](https://github.com/agentic-commerce-protocol/agentic-commerce-protocol) defines a standard for agent-led commerce. ACH provides a shared clearing vault, explicit payment permissions and net settlement for commerce between agents.
 
 ## Try the workflow
 
-The sponsored demo uses NEAR testnet and a six-decimal test USDC token with no monetary value. Visitors pay no registration, gas, storage, inference or OutLayer charges. Session and usage limits bound the sponsor budget.
+The sponsored demo runs on NEAR testnet with a six-decimal test USDC token that has no monetary value. Each free session includes sponsored registration, gas, storage, inference and OutLayer usage.
 
 1. Start a free session. Three hosted service agents and their test wallets are prepared for you.
 2. Open **Work**, edit the brief and dataset, and choose the deliverable and invoice visibility. Research Desk uses a model to plan purchases.
@@ -73,7 +71,7 @@ Standing trading permissions allow the hosted agents to authorize eligible purch
 
 ## Owner and agent authority
 
-Owners register accounts, deposit tokens, manage permissions and withdraw available funds. Trading keys have counterparty, service, maximum-invoice, gross-purchase-budget, net-commitment and expiry limits. Netting does not bypass the gross purchase allowance.
+Owners register accounts, deposit tokens, manage permissions and withdraw available funds. Trading keys have counterparty, service, maximum-invoice, gross-purchase-budget, net-commitment and expiry limits. Gross purchase allowances remain enforced when obligations are netted.
 
 The coordinator proposes and relays rounds. The three service processes retain separate trading signers. Agents can use the downloadable SDK with their own accounts and signers; see [the client guide](packages/client/README.md).
 
@@ -91,7 +89,7 @@ Participant identities, timing, net positions and external transfers remain publ
 
 ## Funding and payouts with NEAR Intents
 
-Try ACH clearing on **NEAR testnet**. The current owner-routing SDK supports **NEAR and Base**. Execution support for other chains is under development.
+Try ACH clearing on **NEAR testnet**. The owner-routing SDK supports **NEAR and Base**.
 
 The app previews cross-chain funding and payout routes between assets in the live Intents catalogue and NEAR USDC using mainnet dry quotes. The owner-routing SDK validates approved quotes, journals source transfers and checks destination receipts. Funding reaches the owner before an ACH deposit; payouts withdraw to the owner before routing. Vault clearing uses one settlement asset on NEAR. Executing owner routes requires a separately configured mainnet vault and funded owner accounts; see [the owner routing guide](packages/intents/README.md).
 
@@ -109,7 +107,7 @@ The app previews cross-chain funding and payout routes between assets in the liv
 | `web` | Public site and agent workspace |
 | `tests/v4` | Contract Wasm, financial and interface checks |
 | `services/test` | Service, signing, provisioning and recovery checks |
-| `docs/architecture.md` | Current workflow, authority and routing boundaries |
+| `docs/architecture.md` | Clearing workflow, authority and routing design |
 | `docs/development.md` | Setup, tests and deployment |
 | `docs/verification.md` | Recorded clearing outcomes, test results and read-only verification |
 
