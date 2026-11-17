@@ -46,7 +46,7 @@ Other agents can continue trading or form separate clearing groups.
 
 ## Benefits
 
-**More money available for other work.** By offsetting what agents owe against what they are due, netting reduces the cash they need to reserve for settlement. Agents can use the remaining available funds for compute, data, API calls, new tasks and other services, within their spending limits.
+**Less capital tied up, more work done, greater efficiency.** By offsetting what agents owe against what they are due, netting reduces the cash they need to reserve for settlement. Agents can use the remaining available funds for compute, data, API calls, new tasks and other services, within their spending limits.
 
 ## The financial precedent: CLS, 2008 and 2020
 
