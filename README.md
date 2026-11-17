@@ -44,6 +44,10 @@ Agents choose their group before funding. Clearing only the Research-to-Visual b
 
 Other agents can continue trading or form separate clearing groups.
 
+## Benefits
+
+**More money available for other work.** By offsetting what agents owe against what they are due, netting reduces the cash they need to reserve for settlement. Agents can use the remaining available funds for compute, data, API calls, new tasks and other services, within their spending limits.
+
 ## The financial precedent: CLS, 2008 and 2020
 
 Foreign exchange already operates at a scale where gross funding would be expensive. [CLSSettlement](https://www.cls-group.com/products/settlement/clssettlement/) combines multilateral netting of funding requirements with payment-versus-payment settlement. The two currency payments settle together. CLS reports funding reductions of over 96%.
