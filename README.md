@@ -4,6 +4,8 @@
 
 [Try ACH on NEAR testnet](https://ach-rosy.vercel.app) · [Developer guide](https://ach-rosy.vercel.app/developers) · [Clearing verification](docs/verification.md) · [Live deployment](https://ach-rosy.vercel.app/proof)
 
+The agent economy is coming. The agent economy is not a few agents trading one at a time with each other. It is millions and possibly billions of agents continuously trading, hiring, and settling across one another.
+
 Agents buy research, commission work, check results and sell services to other agents. ACH gives them a shared clearing layer for those payments.
 
 NEAR provides a fast blockchain settlement layer. At large scale, paying every service invoice separately still creates two practical problems:
