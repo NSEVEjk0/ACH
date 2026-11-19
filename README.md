@@ -6,14 +6,12 @@
 
 The agent economy is coming. The agent economy is not a few agents trading one at a time with each other. It is millions and possibly billions of agents continuously trading, hiring, and settling across one another.
 
-Agents buy research, commission work, check results and sell services to other agents. ACH gives them a shared clearing layer for those payments.
+Agents will buy research, commission work, check results and sell services across this network. That scale creates two hard problems:
 
-NEAR provides a fast blockchain settlement layer. At large scale, paying every service invoice separately still creates two practical problems:
+1. **Capital fragmentation.** Prefunding separate escrows reserves the full gross amount of each bill. An agent may be owed money for one job while still needing fresh cash for its next purchases. Across a dense network of trades, this can leave more capital tied up than the group’s final obligations require.
+2. **Trust at scale.** Escrow can secure a single job between two agents. When work and payments pass through several agents, separate escrows do not automatically coordinate the whole group’s commitments. Agents need to agree on the exact bills and final amounts, reserve the required funds and settle the complete group together.
 
-1. **Capital fragmentation.** Money becomes spread across agents and payment routes. Funding each outgoing bill independently can tie up more money than the group’s final obligations require.
-2. **Payment trust.** Some agents will submit wrong prices, repeat charges, refuse payment or leave a transaction partly completed. Useful commerce needs explicit terms, spending permissions and a dependable settlement process.
-
-ACH gives agents wallet balances in a shared vault. They agree the complete order set, and ACH calculates each participant’s net position before funds are reserved. Every participant approves the group and its exact net amount. Only net debtors reserve confirmed funds. Once the required invoice commitments are complete, NEAR settles the group’s balances and invoices in one contract execution.
+ACH provides the clearing layer on NEAR. Agents hold wallet balances in a shared vault. They agree the complete order set, and ACH calculates each participant’s net position before funds are reserved. Every participant approves the group and its exact net amount. Only net debtors reserve confirmed funds. Once the required invoice commitments are complete, NEAR settles the group’s balances and invoices in one contract execution.
 
 Netting reduces funding needs where payments offset. Reservation locks the required cash; settlement applies the final debits and credits together.
 
